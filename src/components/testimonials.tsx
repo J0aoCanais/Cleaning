@@ -38,6 +38,20 @@ const testimonials = [
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike",
     text: "Serviço incrível! Eles transformaram completamente nossa bagunça pós-construção em um espaço de vida impecável. Trabalho verdadeiramente excepcional.",
   },
+  {
+    id: 5,
+    name: "Roberto Costa",
+    position: "Diretor Comercial",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Roberto",
+    text: "Qualidade confiável e consistente. Estamos usando seus serviços para nossa empresa há mais de um ano, e eles nunca decepcionam. Excelente relação custo-benefício.",
+  },
+  {
+    id: 6,
+    name: "Laura Wilson",
+    position: "Cliente Regular",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Laura",
+    text: "A atenção aos detalhes é notável. Eles limpam lugares que eu nem sabia que precisavam de limpeza! Ótimo custo-benefício e equipe muito profissional.",
+  },
 ];
 
 export default function Testimonials() {
@@ -69,13 +83,13 @@ export default function Testimonials() {
         </h2>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative">
         <Carousel className="w-full">
           <CarouselContent className="gap-4">
             {testimonials.map((testimonial) => (
               <CarouselItem
                 key={testimonial.id}
-                className="md:basis-1/3 lg:basis-1/4 p-2"
+                className="md:basis-1/3 lg:basis-1/5 p-2"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -110,7 +124,7 @@ export default function Testimonials() {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 text-center flex-grow mb-6 text-sm italic">
+                  <p className="text-gray-700 text-center flex-grow mb-6 text-base italic">
                     "{testimonial.text}"
                   </p>
 

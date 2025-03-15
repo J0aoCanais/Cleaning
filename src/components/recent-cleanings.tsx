@@ -47,13 +47,13 @@ export default function RecentCleanings() {
         Limpezas Recentes
       </h2>
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative">
         <Carousel className="w-full">
           <CarouselContent>
             {cleanings.map((cleaning) => (
               <CarouselItem
                 key={cleaning.id}
-                className="md:basis-1/3 lg:basis-1/4"
+                className="md:basis-1/3 lg:basis-1/5"
               >
                 <div className="relative group overflow-hidden rounded-lg h-64 m-1">
                   <img
@@ -62,7 +62,7 @@ export default function RecentCleanings() {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#A0D5CD]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
-                    <span className="text-[#A0D5CD] font-medium text-lg">
+                    <span className="text-white font-medium text-lg">
                       Ver mais
                     </span>
                   </div>

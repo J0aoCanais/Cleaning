@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <div className="md:hidden">
@@ -35,7 +48,7 @@ export default function MobileMenu() {
       </button>
 
       {isOpen && (
-        <div className="fixed top-16 left-0 right-0 bg-white shadow-md z-50 p-4">
+        <div className="fixed top-16 left-0 right-0 bottom-0 bg-white shadow-md z-50 p-4 h-screen">
           <div className="flex flex-col space-y-4">
             <Link
               to="/"
@@ -59,7 +72,7 @@ export default function MobileMenu() {
               Limpezas
             </Link>
             <Link to="/contacto" onClick={() => setIsOpen(false)}>
-              <Button className="bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white rounded-full px-6 w-full mt-2">
+              <Button className="bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white rounded-full px-5 py-2 w-auto mt-2">
                 Contacte-nos
               </Button>
             </Link>

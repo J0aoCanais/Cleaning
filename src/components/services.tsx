@@ -46,6 +46,17 @@ const businessServices = [
       <Grid className="w-12 h-12 text-[#A0D5CD] group-hover:text-white transition-colors duration-300" />
     ),
   },
+  {
+    id: 7,
+    title: "Limpeza Especializada",
+    description:
+      "Serviços de limpeza especializados para requisitos únicos e desafios de limpeza difíceis.",
+    additionalText:
+      "Nossos serviços especializados atendem a necessidades específicas como remoção de odores, limpeza após incêndios ou inundações, e tratamento de superfícies especiais. Nossa equipe é treinada para lidar com situações complexas, utilizando equipamentos e produtos adequados para cada caso.",
+    icon: (
+      <Sparkles className="w-12 h-12 text-[#A0D5CD] group-hover:text-white transition-colors duration-300" />
+    ),
+  },
 ];
 
 const homeServices = [
@@ -80,6 +91,17 @@ const homeServices = [
       "Nosso serviço de limpeza pré/pós-mudança garante que sua nova casa esteja impecável antes de você se mudar ou que sua antiga casa esteja impecável quando você sair. Limpamos todas as superfícies, incluindo armários, eletrodomésticos, janelas, pisos e banheiros para ajudá-lo a recuperar seu depósito de segurança ou começar do zero em seu novo espaço.",
     icon: (
       <WashingMachine className="w-12 h-12 text-[#A0D5CD] group-hover:text-white transition-colors duration-300" />
+    ),
+  },
+  {
+    id: 8,
+    title: "Limpeza de Ar Condicionado",
+    description:
+      "Limpeza profissional de sistemas de ar condicionado para melhor qualidade do ar e desempenho.",
+    additionalText:
+      "Nossa limpeza de ar condicionado remove poeira, mofo e alérgenos do seu sistema, melhorando a qualidade do ar e a eficiência energética. Recomendamos este serviço regularmente para manter um ambiente saudável e prolongar a vida útil do seu equipamento.",
+    icon: (
+      <Wind className="w-12 h-12 text-[#A0D5CD] group-hover:text-white transition-colors duration-300" />
     ),
   },
 ];
@@ -129,7 +151,7 @@ export default function Services() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 max-w-6xl mx-auto"
+        className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 max-w-7xl mx-auto"
       >
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#A0D5CD]">
@@ -173,7 +195,7 @@ export default function Services() {
           whileInView="visible"
           viewport={{ once: true }}
           exit={{ opacity: 0, y: 10 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
         >
           {services.map((service) => (
             <motion.div
@@ -194,21 +216,16 @@ export default function Services() {
               <p className="text-gray-600 group-hover:text-white mb-6 text-sm transition-colors flex-grow">
                 {service.description}
               </p>
-              <div className="group-hover:hidden">
-                {expandedService === service.id && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 mb-6 text-sm text-gray-600 transition-colors"
-                  >
-                    {service.additionalText}
-                  </motion.div>
-                )}
-              </div>
-              <div className="hidden group-hover:block mt-4 mb-6 text-sm text-white transition-colors">
-                {service.additionalText}
-              </div>
+              {expandedService === service.id && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="mt-4 mb-6 text-sm text-gray-600 group-hover:text-white transition-colors"
+                >
+                  {service.additionalText}
+                </motion.div>
+              )}
               <Button
                 variant="outline"
                 className="border-[#A0D5CD] text-[#A0D5CD] group-hover:border-white group-hover:text-[#A0D5CD] transition-colors hover:text-[#A0D5CD] group-hover:bg-white mt-auto"
