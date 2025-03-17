@@ -41,13 +41,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#A0D5CD] text-white py-12 px-4 md:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:pl-0">
-          <h3 className="text-xl font-semibold mb-4 relative inline-block">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="md:pl-4 lg:pl-8">
+          <h3 className="text-xl font-semibold mb-6 relative inline-block">
             Links
             <span className="absolute -bottom-2 left-0 right-0 w-full h-1 bg-white/40"></span>
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {quickLinks.map((link, index) => (
               <li key={index}>
                 <Link
@@ -63,16 +63,16 @@ export default function Footer() {
         </div>
 
         <div className="text-center">
-          <h3 className="text-xl font-semibold mb-4 relative inline-block">
+          <h3 className="text-xl font-semibold mb-6 relative inline-block">
             Social media
             <span className="absolute -bottom-2 left-0 right-0 w-full h-1 bg-white/40"></span>
           </h3>
-          <div className="flex space-x-4 justify-center">
+          <div className="flex space-x-6 justify-center mt-4">
             {socialMedia.map((item, index) => (
               <a
                 key={index}
                 href={item.link}
-                className="bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors duration-300"
+                className="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors duration-300"
                 aria-label={`Social media link ${index + 1}`}
               >
                 {item.icon}
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-8">
+          <div className="mt-10">
             <h4 className="text-sm font-semibold mb-3 text-white/90">
               INSCREVA-SE PARA NOVIDADES
             </h4>
@@ -98,15 +98,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="md:text-right">
-          <h3 className="text-xl font-semibold mb-4 relative inline-block">
+        <div className="md:text-right md:pr-4 lg:pr-8">
+          <h3 className="text-xl font-semibold mb-6 relative inline-block">
             Contact info
             <span className="absolute -bottom-2 left-0 right-0 w-full h-1 bg-white/40"></span>
           </h3>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {contactInfo.map((item, index) => (
               <li key={index} className="flex items-start md:justify-end">
-                <div className="mr-2 mt-1 text-white/80">{item.icon}</div>
+                <div className="mr-3 mt-1 text-white/80">{item.icon}</div>
                 <span className="text-white">{item.text}</span>
               </li>
             ))}
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-8 pt-6 border-t border-white/20 flex flex-wrap justify-between items-center text-white/80">
+      <div className="mt-10 pt-6 border-t border-white/20 flex flex-wrap justify-between items-center text-white/80">
         <div className="text-sm">
           <p>Designed and developed by</p>
           <p className="font-bold">PIXEL WEB</p>

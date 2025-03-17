@@ -4,12 +4,20 @@ import MobileMenu from "./mobile-menu";
 
 export default function Navbar() {
   return (
-    <nav className="w-full py-4 px-12 flex flex-col md:flex-row items-center bg-white">
+    <nav className="w-full py-2 px-4 md:px-12 flex flex-col md:flex-row items-center bg-white relative">
       {/* Logo */}
-      <div className="flex items-center justify-center w-full md:w-auto mb-4 md:mb-0">
-        <Link to="/" className="flex items-center justify-center">
-          <img src="/logoLimpezas2.svg" alt="Limpas Logo" className="h-20" />
+      <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logoLimpezas2.svg"
+            alt="Limpas Logo"
+            className="h-12 md:h-20"
+          />
         </Link>
+        {/* Menu Mobile */}
+        <div className="md:hidden">
+          <MobileMenu />
+        </div>
       </div>
 
       {/* Menu Desktop */}
@@ -43,11 +51,6 @@ export default function Navbar() {
             Contacte-nos
           </Button>
         </Link>
-      </div>
-
-      {/* Menu Mobile */}
-      <div className="absolute right-4 top-4 md:hidden">
-        <MobileMenu />
       </div>
     </nav>
   );
