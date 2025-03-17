@@ -14,6 +14,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
-    <div className="w-[329px] h-[253px]"></div>
   </React.StrictMode>,
 );
