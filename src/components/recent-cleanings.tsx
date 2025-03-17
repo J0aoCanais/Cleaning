@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { Link } from "react-router-dom";
 
 const cleanings = [
   {
@@ -42,38 +43,40 @@ const cleanings = [
 
 export default function RecentCleanings() {
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-[#f8fafa]">
+    <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#A0D5CD]">
         Limpezas Recentes
       </h2>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-6xl mx-auto relative">
         <Carousel className="w-full">
-          <CarouselContent>
+          <CarouselContent className="gap-2 md:gap-4">
             {cleanings.map((cleaning) => (
               <CarouselItem
                 key={cleaning.id}
-                className="md:basis-1/3 lg:basis-1/5"
+                className="md:basis-1/3 lg:basis-1/4 p-1 md:p-2"
               >
-                <div className="relative group overflow-hidden rounded-lg h-64 m-1">
-                  <img
-                    src={cleaning.image}
-                    alt={cleaning.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#A0D5CD]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
-                    <span className="text-white font-medium text-lg">
-                      Ver mais
-                    </span>
+                <Link to="/servicos">
+                  <div className="relative group overflow-hidden rounded-lg h-64 m-1 cursor-pointer">
+                    <img
+                      src={cleaning.image}
+                      alt={cleaning.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#A0D5CD]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                      <span className="text-white font-medium text-lg">
+                        Ver mais
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="absolute -left-12 top-1/2 transform -translate-y-1/2">
+          <div className="absolute -left-4 md:-left-8 top-1/2 transform -translate-y-1/2 z-10 hidden md:block">
             <CarouselPrevious className="bg-white shadow-md hover:bg-[#A0D5CD] hover:text-white" />
           </div>
-          <div className="absolute -right-12 top-1/2 transform -translate-y-1/2">
+          <div className="absolute -right-4 md:-right-8 top-1/2 transform -translate-y-1/2 z-10 hidden md:block">
             <CarouselNext className="bg-white shadow-md hover:bg-[#A0D5CD] hover:text-white" />
           </div>
         </Carousel>
@@ -88,6 +91,8 @@ export default function RecentCleanings() {
           ))}
         </div>
       </div>
+
+      {/* Removido o botão "Ver Mais Limpezas" */}
     </section>
   );
 }

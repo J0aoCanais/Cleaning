@@ -75,29 +75,29 @@ export default function Limpezas() {
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       {/* Hero Section */}
       <div
-        className="relative h-[500px] bg-cover bg-center"
+        className="relative h-[400px] md:h-[500px] bg-cover bg-center"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')",
         }}
       >
-        <div className="absolute inset-0 flex items-center justify-start px-8 md:px-16">
+        <div className="absolute inset-0 flex items-center justify-start px-4 md:px-16">
           <div className="text-left text-white max-w-3xl">
-            <p className="text-gray-200 mb-2">
+            <p className="text-gray-200 mb-2 text-sm md:text-base">
               A melhor empresa de limpeza da Sua Cidade
             </p>
-            <h1 className="text-5xl font-bold mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight">
               Seja o nosso próximo caso de sucesso
             </h1>
-            <p className="text-gray-200 mb-6 max-w-xl">
+            <p className="text-gray-200 mb-4 md:mb-6 max-w-xl text-sm md:text-base">
               Oferecemos serviços de limpeza profissional para garantir que o
               seu espaço esteja sempre impecável e acolhedor.
             </p>
-            <button className="bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white px-6 py-3 rounded-md transition duration-300">
+            <button className="bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white px-4 md:px-6 py-2 md:py-3 rounded-md transition duration-300 text-sm md:text-base">
               Contacte-nos
             </button>
           </div>
@@ -105,52 +105,62 @@ export default function Limpezas() {
       </div>
 
       {/* Industrial Cleaning Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-[#F6FAFF]">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-light text-[#A0D5CD] text-center mb-12">
+          <h2 className="text-center mb-8 md:mb-12 text-3xl md:text-5xl font-semibold text-[#A0D5CD] py-2 md:py-4">
             Limpezas na indústria
           </h2>
 
           <div className="mb-12">
             {/* First before-after slider */}
-            <div className="bg-white rounded-lg overflow-hidden relative mb-8">
+            <div className="bg-white rounded-[25px] overflow-hidden relative mb-8">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-12 md:col-span-6 p-6 relative">
-                  <div className="absolute -right-3 top-0 transform bg-[#A0D5CD]/20 rounded-full p-4 z-10">
-                    <Quote className="w-6 h-6 text-[#A0D5CD]" />
+                <div className="col-span-12 md:col-span-6 px-4 md:px-6 pb-6 pt-6 md:pt-8 relative flex flex-col items-center text-center">
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png.svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
                   </div>
-                  <blockquote className="mr-6 text-gray-600 text-center mt-8">
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
+                  <blockquote className="text-black-600 pt-4 text-base md:text-xl font-semibold leading-relaxed">
                     What a great experience! I was skeptical of professional
                     cleaningers, and kept on using Googlers. Highly recommended.
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
                   </blockquote>
                   <div className="flex justify-between items-center mt-4">
                     <div>
-                      <p className="font-semibold">Pedro Oliveira</p>
-                      <p className="text-sm text-gray-500">CEO</p>
+                      <p className="text-xs md:text-sm font-normal leading-relaxed">
+                        Pedro Oliveira
+                      </p>
                     </div>
                   </div>
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png (1).svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
+                  </div>
                 </div>
-                <div className="col-span-12 md:col-span-6 relative h-64 overflow-hidden">
+                <div className="col-span-12 md:col-span-6 relative h-80 overflow-hidden">
                   <div className="relative w-full h-full">
                     <img
                       src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                       alt="Before Cleaning"
                       className="absolute inset-0 w-full h-full object-cover"
+                      style={{ objectFit: "cover" }}
                     />
                     <div
                       className="absolute inset-0 overflow-hidden"
-                      style={{ width: `${sliderPosition1}%` }}
+                      style={{
+                        clipPath: `polygon(0 0, ${sliderPosition1}% 0, ${sliderPosition1}% 100%, 0 100%)`,
+                      }}
                     >
                       <img
                         src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                         alt="After Cleaning"
                         className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -169,8 +179,8 @@ export default function Limpezas() {
                           transform: "translateX(-50%)",
                         }}
                       >
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-90" />
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-90" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-180" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-0" />
                       </div>
                     </div>
                     <input
@@ -187,25 +197,38 @@ export default function Limpezas() {
                 </div>
               </div>
             </div>
+            <div className="flex flex-row justify-end pb-10">
+              <Link
+                to={createPageUrl("contacto")}
+                className="flex text-black justify-center text-base md:text-xl font-semibold"
+              >
+                Pedir Orçamento{" "}
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-1" />
+              </Link>
+            </div>
 
             {/* Second before-after slider */}
-            <div className="bg-white rounded-lg overflow-hidden relative">
+            <div className="bg-white rounded-[25px] overflow-hidden relative mb-8">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-12 md:col-span-6 relative h-64 overflow-hidden">
+                <div className="col-span-12 md:col-span-6 relative h-80 overflow-hidden">
                   <div className="relative w-full h-full">
                     <img
-                      src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                      src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                       alt="Before Cleaning"
                       className="absolute inset-0 w-full h-full object-cover"
+                      style={{ objectFit: "cover" }}
                     />
                     <div
                       className="absolute inset-0 overflow-hidden"
-                      style={{ width: `${sliderPosition2}%` }}
+                      style={{
+                        clipPath: `polygon(0 0, ${sliderPosition2}% 0, ${sliderPosition2}% 100%, 0 100%)`,
+                      }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                         alt="After Cleaning"
                         className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -224,8 +247,8 @@ export default function Limpezas() {
                           transform: "translateX(-50%)",
                         }}
                       >
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-90" />
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-90" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-180" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-0" />
                       </div>
                     </div>
                     <input
@@ -240,81 +263,99 @@ export default function Limpezas() {
                     />
                   </div>
                 </div>
-                <div className="col-span-12 md:col-span-6 p-6 relative">
-                  <div className="absolute -left-3 top-0 transform bg-[#A0D5CD]/20 rounded-full p-4 z-10">
-                    <Quote className="w-6 h-6 text-[#A0D5CD]" />
+                <div className="col-span-12 md:col-span-6 px-4 md:px-6 pb-6 pt-6 md:pt-8 relative flex flex-col items-center text-center">
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png.svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
                   </div>
-                  <blockquote className="ml-6 text-gray-600 text-center mt-8">
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
-                    What a great experience! I was skeptical of professional
-                    cleaningers, and kept on using Googlers. Highly recommended.
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
+                  <blockquote className="text-black-600 pt-4 text-base md:text-xl font-semibold leading-relaxed">
+                    Another amazing experience! The team was professional and
+                    exceeded expectations. Highly recommended.
                   </blockquote>
                   <div className="flex justify-between items-center mt-4">
                     <div>
-                      <p className="font-semibold">Paulo Organizer</p>
-                      <p className="text-sm text-gray-500">CTO</p>
+                      <p className="text-xs md:text-sm font-normal leading-relaxed">
+                        Maria Silva
+                      </p>
                     </div>
+                  </div>
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png (1).svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-row justify-start">
             <Link
-              to={createPageUrl("OrcarLimpeza")}
-              className="flex items-center bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white px-6 py-3 rounded-md transition duration-300"
+              to={createPageUrl("contacto")}
+              className="flex text-black justify-center text-base md:text-xl font-semibold"
             >
-              Pedir Orçamento <ArrowRight className="w-4 h-4 ml-1" />
+              Pedir Orçamento{" "}
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-1" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#A0D5CD]/10" ref={statsRef}>
+      <section className="py-12 md:py-16 bg-[#A0D5CD]" ref={statsRef}>
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-start gap-8">
-            <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-2">
-                Mais De 5 Anos De Serviço
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4 md:mb-2 leading-tight">
+                Mais de 5 Anos de Serviço
               </h2>
-              <p className="text-gray-600 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                mollis ante vel erat cursus, vitae consectetur lacus luctus.
-                Suspendisse eget rutrum magna. Aenean a semper dui, ac bibendum
-                sem. Praesent egestas felis ut eros maximus, sed lobortis ipsum
-                feugiat. Proin a lacinia enim. Mauris vitae nisi ut nisl gravida
-                condimentum.
+              <p className="text-white mb-8 text-base md:text-2xl font-semibold leading-relaxed pt-4 md:pt-10 pb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur non lobortis nibh, nec scelerisque eros. Fusce aliquam
+                convallis Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Curabitur non lobortis nibh, nec scelerisque eros.
               </p>
-              <button className="bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white px-6 py-2 rounded-md transition duration-300">
+              <button className="bg-white hover:bg-[#8BC0B8] text-[#A0D5CD] transition duration-300 w-full md:w-auto px-6 py-3 md:py-4 rounded-full font-bold text-lg md:text-2xl">
                 Contacte-nos
               </button>
             </div>
 
-            <div className="w-full md:w-1/2">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white p-6 rounded-lg shadow-md text-center h-[150px] flex flex-col justify-center">
-                  <p className="text-4xl font-bold text-[#A0D5CD] mb-2">
-                    {clientCount}+
-                  </p>
-                  <p className="text-gray-600">Clientes Satisfeitos</p>
+            <div className="w-full md:w-1/2 mt-8 md:mt-0">
+              <div className="grid grid-cols-2 gap-4 md:gap-12">
+                <div className="flex items-center justify-center">
+                  <div className="bg-white p-4 md:p-6 shadow-md text-center w-full max-w-[160px] md:max-w-[200px] h-[160px] md:h-[200px] flex flex-col justify-center rounded-lg">
+                    <p className="mb-1 md:mb-2 text-3xl md:text-5xl font-bold text-black">
+                      {clientCount}+
+                    </p>
+                    <p className="text-sm md:text-base text-black">Clientes</p>
+                    <p className="text-sm md:text-base text-black">
+                      Satisfeitos
+                    </p>
+                  </div>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md text-center h-[150px] flex flex-col justify-center">
-                  <p className="text-4xl font-bold text-[#A0D5CD] mb-2">
-                    {teamCount}+
-                  </p>
-                  <p className="text-gray-600">Equipe de Profissionais</p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md text-center h-[150px] flex flex-col justify-center">
-                  <p className="text-4xl font-bold text-[#A0D5CD] mb-2">
-                    {projectCount}+
-                  </p>
-                  <p className="text-gray-600">Projetos Concluídos</p>
+                <div className="flex flex-col gap-4 md:gap-12">
+                  <div className="bg-white p-4 md:p-6 shadow-md text-center w-full max-w-[160px] md:max-w-[200px] h-[160px] md:h-[200px] flex flex-col justify-center rounded-lg">
+                    <p className="mb-1 md:mb-2 text-3xl md:text-5xl font-bold text-black">
+                      {teamCount}+
+                    </p>
+                    <p className="text-sm md:text-base text-black">Equipa</p>
+                    <p className="text-sm md:text-base text-black">
+                      Profissional
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 md:p-6 shadow-md text-center w-full max-w-[160px] md:max-w-[200px] h-[160px] md:h-[200px] flex flex-col justify-center rounded-lg">
+                    <p className="mb-1 md:mb-2 text-3xl md:text-5xl font-bold text-black">
+                      {projectCount}+
+                    </p>
+                    <p className="text-sm md:text-base text-black">Projetos</p>
+                    <p className="text-sm md:text-base text-black">
+                      Concluídos
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -323,52 +364,62 @@ export default function Limpezas() {
       </section>
 
       {/* Residential Cleaning Section */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-[#F6FAFF]">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-light text-[#A0D5CD] text-center mb-12">
+          <h2 className="text-center mb-8 md:mb-12 text-3xl md:text-5xl font-semibold text-[#A0D5CD] py-2 md:py-4">
             Limpezas a particulares
           </h2>
 
-          <div>
+          <div className="mb-12">
             {/* First before-after slider */}
-            <div className="bg-white rounded-lg overflow-hidden relative mb-8">
+            <div className="bg-white rounded-[25px] overflow-hidden relative mb-8">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-12 md:col-span-6 p-6 relative">
-                  <div className="absolute -right-3 top-0 transform bg-[#A0D5CD]/20 rounded-full p-4 z-10">
-                    <Quote className="w-6 h-6 text-[#A0D5CD]" />
+                <div className="col-span-12 md:col-span-6 px-4 md:px-6 pb-6 pt-6 md:pt-8 relative flex flex-col items-center text-center">
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png.svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
                   </div>
-                  <blockquote className="mr-6 text-gray-600 text-center mt-8">
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
+                  <blockquote className="text-black-600 pt-4 text-base md:text-xl font-semibold leading-relaxed">
                     What a great experience! I was skeptical of professional
                     cleaningers, and kept on using Googlers. Highly recommended.
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
                   </blockquote>
                   <div className="flex justify-between items-center mt-4">
                     <div>
-                      <p className="font-semibold">Pedro Oliveira</p>
-                      <p className="text-sm text-gray-500">Cliente</p>
+                      <p className="text-xs md:text-sm font-normal leading-relaxed">
+                        Pedro Oliveira
+                      </p>
                     </div>
                   </div>
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png (1).svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
+                  </div>
                 </div>
-                <div className="col-span-12 md:col-span-6 relative h-64 overflow-hidden">
+                <div className="col-span-12 md:col-span-6 relative h-80 overflow-hidden">
                   <div className="relative w-full h-full">
                     <img
-                      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                      src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                       alt="Before Cleaning"
                       className="absolute inset-0 w-full h-full object-cover"
+                      style={{ objectFit: "cover" }}
                     />
                     <div
                       className="absolute inset-0 overflow-hidden"
-                      style={{ width: `${sliderPosition3}%` }}
+                      style={{
+                        clipPath: `polygon(0 0, ${sliderPosition3}% 0, ${sliderPosition3}% 100%, 0 100%)`,
+                      }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                         alt="After Cleaning"
                         className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -387,8 +438,8 @@ export default function Limpezas() {
                           transform: "translateX(-50%)",
                         }}
                       >
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-90" />
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-90" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-180" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-0" />
                       </div>
                     </div>
                     <input
@@ -405,25 +456,38 @@ export default function Limpezas() {
                 </div>
               </div>
             </div>
+            <div className="flex flex-row justify-end pb-10">
+              <Link
+                to={createPageUrl("contacto")}
+                className="flex text-black justify-center text-base md:text-xl font-semibold"
+              >
+                Pedir Orçamento{" "}
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-1" />
+              </Link>
+            </div>
 
             {/* Second before-after slider */}
-            <div className="bg-white rounded-lg overflow-hidden relative">
+            <div className="bg-white rounded-[25px] overflow-hidden relative mb-8">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-12 md:col-span-6 relative h-64 overflow-hidden">
+                <div className="col-span-12 md:col-span-6 relative h-80 overflow-hidden">
                   <div className="relative w-full h-full">
                     <img
-                      src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                      src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                       alt="Before Cleaning"
                       className="absolute inset-0 w-full h-full object-cover"
+                      style={{ objectFit: "cover" }}
                     />
                     <div
                       className="absolute inset-0 overflow-hidden"
-                      style={{ width: `${sliderPosition4}%` }}
+                      style={{
+                        clipPath: `polygon(0 0, ${sliderPosition4}% 0, ${sliderPosition4}% 100%, 0 100%)`,
+                      }}
                     >
                       <img
-                        src="https://images.unsplash.com/photo-1585421514284-efb74320a1d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
                         alt="After Cleaning"
                         className="absolute inset-0 w-full h-full object-cover"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -442,8 +506,8 @@ export default function Limpezas() {
                           transform: "translateX(-50%)",
                         }}
                       >
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-90" />
-                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-90" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] -rotate-180" />
+                        <ArrowRight className="w-4 h-4 text-[#A0D5CD] rotate-0" />
                       </div>
                     </div>
                     <input
@@ -458,40 +522,48 @@ export default function Limpezas() {
                     />
                   </div>
                 </div>
-                <div className="col-span-12 md:col-span-6 p-6 relative">
-                  <div className="absolute -left-3 top-0 transform bg-[#A0D5CD]/20 rounded-full p-4 z-10">
-                    <Quote className="w-6 h-6 text-[#A0D5CD]" />
+                <div className="col-span-12 md:col-span-6 px-4 md:px-6 pb-6 pt-6 md:pt-8 relative flex flex-col items-center text-center">
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png.svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
                   </div>
-                  <blockquote className="ml-6 text-gray-600 text-center mt-8">
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
-                    What a great experience! I was skeptical of professional
-                    cleaningers, and kept on using Googlers. Highly recommended.
-                    <span className="text-2xl text-[#A0D5CD] font-serif">
-                      "
-                    </span>
+                  <blockquote className="text-black-600 pt-4 text-base md:text-xl font-semibold leading-relaxed">
+                    Another amazing experience! The team was professional and
+                    exceeded expectations. Highly recommended.
                   </blockquote>
                   <div className="flex justify-between items-center mt-4">
                     <div>
-                      <p className="font-semibold">Paulo Organizer</p>
-                      <p className="text-sm text-gray-500">Cliente</p>
+                      <p className="text-xs md:text-sm font-normal leading-relaxed">
+                        Maria Silva
+                      </p>
                     </div>
+                  </div>
+                  <div className="mt-4">
+                    <img
+                      src="../public/icon-testimonial.png (1).svg" // Substitua pelo caminho do logo
+                      alt="Logo"
+                      className="w-12 h-7"
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-row justify-start">
             <Link
-              to={createPageUrl("OrcarLimpeza")}
-              className="flex items-center bg-[#A0D5CD] hover:bg-[#8BC0B8] text-white px-6 py-3 rounded-md transition duration-300"
+              to={createPageUrl("contacto")}
+              className="flex text-black justify-center text-base md:text-xl font-semibold"
             >
-              Pedir Orçamento <ArrowRight className="w-4 h-4 ml-1" />
+              Pedir Orçamento{" "}
+              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-1" />
             </Link>
           </div>
         </div>
       </section>
+
       <Footer />
     </div>
   );

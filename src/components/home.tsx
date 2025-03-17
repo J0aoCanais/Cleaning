@@ -10,15 +10,17 @@ import Footer from "./footer";
 
 function Home() {
   return (
-    <div className="w-full max-h-screen bg-white">
-      <Navbar className="min-w-max" />
-      <Hero />
-      <About />
-      <RecentCleanings />
-      <Stats />
-      <Services />
-      <Testimonials />
-      <Contact />
+    <div className="w-full bg-white min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-grow">
+        <Hero />
+        <About />
+        <RecentCleanings />
+        <Stats />
+        <Services />
+        <Testimonials />
+        <Contact />
+      </div>
       <Footer />
     </div>
   );
